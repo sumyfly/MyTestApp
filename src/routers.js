@@ -3,7 +3,7 @@ import FirstPageComponent from './containers/FirstPageComponent'
 import SecondPageComponent from './containers/SecondPageComponent'
 import AnimationTest from './containers/animation/AnimationTest'
 import CircularProgress from './containers/animation/CircularProgress'
-
+import CircularSlider from './containers/animation/CircularSlider'
 
 const staticRouters = {
   Test: {
@@ -15,7 +15,8 @@ const staticRouters = {
   AnimationTest: {
     name: 'AnimationTest', component: AnimationTest,
     children: {
-      CircularProgress: { name: 'CircularProgress', component: CircularProgress }
+      CircularProgress: { name: 'CircularProgress', component: CircularProgress },
+      CircularSlider: { 'name': 'CircularSlider', component: CircularSlider }
     }
   }
 }

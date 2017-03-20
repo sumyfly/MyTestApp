@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { View, Navigator } from 'react-native';
+import { View, Navigator, Dimensions, TouchableOpacity, Text } from 'react-native';
 import staticRouters, { getRouter, firstRouter } from '../routers'
-
+const { height, width } = Dimensions.get('window')
 export default class SampleComponent extends React.Component {
   render() {
     const initialRoute = getRouter(firstRouter)
@@ -38,7 +38,13 @@ export default class SampleComponent extends React.Component {
               }
             }
           }
-          return <Component {...route.params} navigator={navigator} />
+          return (
+            <View style={{ height: height, width: width }}>
+              <Component style={{ flex: 1 }} {...route.params} navigator={navigator} />
+              <TouchableOpacity onPress={() => { navigator.pop()}} style={{ position: 'absolute', top: 25, left: 10, backgroundColor: 'red' }}>
+                <Text>点我跳回去</Text>
+              </TouchableOpacity>
+            </View>)
         }} />
     );
   }

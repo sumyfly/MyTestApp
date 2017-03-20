@@ -13,14 +13,6 @@ export default class SecondPageComponent extends React.Component {
     };
   }
 
-  _pressButton() {
-    const { navigator } = this.props;
-    if (navigator) {
-      navigator.pop();
-    }
-
-  }
-
   componentDidMount() {
     // this.refs.circularProgress.performLinearAnimation(100, 8000); // Will fill the progress bar linearly in 8 seconds
   }
@@ -56,51 +48,44 @@ export default class SecondPageComponent extends React.Component {
   render() {
     const fill = this.state.points / MAX_POINTS * 100;
     return (
-      <View style={{ flex: 1 }}>
-        <View style={{ height: 50, justifyContent: 'center', alignItems: 'center' }}>
-          <TouchableOpacity onPress={this._pressButton.bind(this)} >
-            <Text>点我跳回去</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.container}
-          {...this._panResponder.panHandlers}>
+      <View style={styles.container}
+        {...this._panResponder.panHandlers}>
 
 
-          <AnimatedCircularProgress
-            size={200}
-            width={3}
-            fill={fill}
-            tintColor="#00e0ff"
-            backgroundColor="#3d5875">
-            {
-              (fill) => (
-                <Text style={styles.points}>
-                  {Math.round(MAX_POINTS * fill / 100)}
-                </Text>
-              )
-            }
-          </AnimatedCircularProgress>
+        <AnimatedCircularProgress
+          size={200}
+          width={3}
+          fill={fill}
+          tintColor="#00e0ff"
+          backgroundColor="#3d5875">
+          {
+            (fill) => (
+              <Text style={styles.points}>
+                {Math.round(MAX_POINTS * fill / 100)}
+              </Text>
+            )
+          }
+        </AnimatedCircularProgress>
 
-          <AnimatedCircularProgress
-            size={120}
-            width={15}
-            fill={fill}
-            tintColor="#00e0ff"
-            backgroundColor="#3d5875" />
+        <AnimatedCircularProgress
+          size={120}
+          width={15}
+          fill={fill}
+          tintColor="#00e0ff"
+          backgroundColor="#3d5875" />
 
-          <AnimatedCircularProgress
-            ref='circularProgress'
-            size={100}
-            width={25}
-            fill={fill}
-            tintColor="#00e0ff"
-            backgroundColor="#3d5875" />
+        <AnimatedCircularProgress
+          ref='circularProgress'
+          size={100}
+          width={25}
+          fill={fill}
+          tintColor="#00e0ff"
+          backgroundColor="#3d5875" />
 
-          <Text style={[styles.pointsDelta, this.state.isMoving && styles.pointsDeltaActive]}>
-            {this.state.pointsDelta >= 0 && '+'}
-            {this.state.pointsDelta}
-          </Text>
-        </View>
+        <Text style={[styles.pointsDelta, this.state.isMoving && styles.pointsDeltaActive]}>
+          {this.state.pointsDelta >= 0 && '+'}
+          {this.state.pointsDelta}
+        </Text>
       </View>
     );
   }
