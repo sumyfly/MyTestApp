@@ -4,12 +4,14 @@ import SecondPageComponent from './containers/SecondPageComponent'
 import AnimationTest from './containers/animation/AnimationTest'
 import CircularProgress from './containers/animation/CircularProgress'
 import CircularSlider from './containers/animation/CircularSlider'
+import FlexTest from './containers/FlexTest'
 
 const staticRouters = {
   Test: {
     name: 'FirstPageComponent', component: FirstPageComponent,
     children: {
-      SecondPageComponent: { name: 'SecondPageComponent', component: SecondPageComponent }
+      SecondPageComponent: { name: 'SecondPageComponent', component: SecondPageComponent },
+      FlexTest: { name: 'FlexTest', component: FlexTest }
     }
   },
   AnimationTest: {

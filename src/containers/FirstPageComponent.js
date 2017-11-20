@@ -27,6 +27,9 @@ export default class FirstPageComponent extends React.Component {
         <TouchableOpacity onPress={() => this._pressButton('AnimationTest.CircularSlider')}>
           <Text>CircularSlider</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => this._pressButton('Test.Flex')}>
+          <Text>FlexTest</Text>
+        </TouchableOpacity>
       </View>
     );
   }

@@ -1,4 +1,4 @@
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
+const AnimatedCircularProgress = require('react-native-circular-progress').AnimatedCircularProgress;
 import React, { Component, PropTypes } from 'react';
 import { View, Dimensions, StyleSheet, AppState, InteractionManager, Text, TouchableOpacity, Image, PanResponder } from 'react-native'
 const MAX_POINTS = 500;
