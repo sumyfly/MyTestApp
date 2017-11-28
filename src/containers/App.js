@@ -6,6 +6,7 @@ import { StackNavigator } from 'react-navigation'
 import { width, height } from '../constants'
 
 import FlexTest from './FlexTest'
+import FirstPageComponent from './FirstPageComponent'
 
 
 export default RootNavigator = StackNavigator({
@@ -14,6 +15,12 @@ export default RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'Home',
     },
+  },
+  FirstPageComponent: {
+    screen: FirstPageComponent,
+    navigationOptions: {
+      headerTitle: 'FirstPageComponent',
+    }
   }
 })
 
